@@ -14,9 +14,12 @@ public class LilDudeAnimationScript : MonoBehaviour
 
     private void Update()
     {
-        if (isToggled)
-        {
+        if (Input.GetKeyDown(KeyCode.D))
+
             isToggled = !isToggled;
+        
+        if(isToggled)
+        {
             Debug.Log("Toggled on");
             playerAnim.SetBool("Dance", true);
 
