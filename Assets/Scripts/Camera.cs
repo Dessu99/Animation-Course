@@ -4,6 +4,7 @@ public class Camera : MonoBehaviour
 {
 
     public Transform target;
+    public Vector3 Offset;
     void Start()
     {
         
@@ -11,6 +12,6 @@ public class Camera : MonoBehaviour
 
     void Update()
     {
-        target.position = transform.position;
+        target.position = transform.position + Offset;
     }
 }
