@@ -1,11 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 public class LilDudeAnimationScript : MonoBehaviour 
 {
     Animator playerAnim;
     private bool isToggled = false;
+    private bool Skele = false;
+    private KeyCode[] kys = new KeyCode[]
+    {
+        KeyCode.D,
+        KeyCode.F
+    };
+    private bool[] toggles = new bool[2];
 
     private void Awake()
     {
@@ -14,29 +22,40 @@ public class LilDudeAnimationScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+      /*  for (int i = 0; i < kys.Length; i++)
+        {
+            if (Input.GetKeyDown(kys[i]))
+                toggles[i] = !toggles[i];
+        }
+        for (int i = 0; i < toggles.Length; i++)
+            
+            playerAnim.SetBool("Dance", toggles[i]);
 
             isToggled = !isToggled;
-        
-        if(isToggled)
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+
+            isToggled = !isToggled;
+
+        if (isToggled)
         {
             Debug.Log("Toggled on");
-            playerAnim.SetBool("Dance", true);
+            playerAnim.SetBool("SkeleDance", true);
 
         }
 
         else
         {
             Debug.Log("Toggled Off");
-            playerAnim.SetBool("Dance", false);
+            playerAnim.SetBool("SkeleDance", false);
         }
+        */
 
 
 
 
-
-
-        /* if (Input.GetKeyDown(KeyCode.D))
+         if (Input.GetKeyDown(KeyCode.D))
 
         {
             print("Dance");
@@ -46,6 +65,6 @@ public class LilDudeAnimationScript : MonoBehaviour
         {
             print("Not Dance");
             playerAnim.SetBool("Dance", false);
-        } */
+        } 
     }
 }
